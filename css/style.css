@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --text-muted: #86868b;
+    --primary-color: #000000;
+    --primary-hover: #333333;
+    --active-color: #000000;
+    --inactive-color: #86868b;
+    --border-color: #e5e5ea;
+    --shadow: none;
+}
+
+body.dark-theme {
+    --bg-color: #000000;
+    --card-bg: #1c1c1e;
+    --text-color: #ffffff;
+    --text-muted: #8e8e93;
+    --primary-color: #ffffff;
+    --primary-hover: #ebebf5;
+    --border-color: #38383a;
+    --shadow: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--text-color);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+button {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 16px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.reset-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.reset-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.form-message {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    min-height: 20px;
+}
+
+.form-message.error {
+    color: var(--inactive-color);
+}
+
+.form-message.success {
+    color: var(--active-color);
+}
+
+.profile-card {
+    border-left: none;
+    border-top: 3px solid var(--text-color);
+    padding: 24px;
+    border-radius: 16px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.profile-card.active {
+    border-top-color: var(--text-color);
+}
+
+.profile-card.inactive {
+    border-top-color: var(--inactive-color);
+    opacity: 0.7;
+}
+
+.profile-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border: none;
+    padding: 0;
+    letter-spacing: -0.015em;
+}
+
+.profile-card p {
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+#profileStatus {
+    font-weight: 600;
+}
+
+.profile-card.active #profileStatus {
+    color: var(--text-color);
+}
+
+.profile-card.inactive #profileStatus {
+    color: var(--inactive-color);
+}
+
+.details-panel {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.details-panel.hidden {
+    display: none;
+}
